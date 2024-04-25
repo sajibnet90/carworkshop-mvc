@@ -1,0 +1,12 @@
+﻿@model CarWorkshopManager.Models.Ticket
+
+<h2>Add Hours</h2>
+
+<form asp-action="AddHours" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="hoursWorked">Hours Worked</label>
+        <input type="number" class="form-control" name="hoursWorked" id="hoursWorked" min="1" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Hours</button>
+</form>

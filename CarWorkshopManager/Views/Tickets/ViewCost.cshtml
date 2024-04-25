@@ -1,0 +1,35 @@
+﻿@model TicketCostViewModel
+
+<h2>Cost Summary for Ticket @Model.Ticket.Id</h2>
+
+<h3>Parts:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Part ID</th> <!-- Added column for Part ID -->
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model.Ticket.Parts)
+        {
+            <tr>
+                <td>@part.Id</td> <!-- Display Part ID -->
+                <td>@part.Name</td>
+                <td>@part.Amount</td>
+                <td>@part.UnitPrice.ToString("C")</td> <!-- Formatted as currency -->
+                <td>@(part.Amount * part.UnitPrice).ToString("C")</td> <!-- Calculated total, formatted as currency -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Labor:</h3>
+<p>@Model.Ticket.Hours hours x €10 per hour</p>
+<p>Total Labor Cost: @Model.LaborTotal.ToString("C")</p> <!-- Formatted as currency -->
+
+<h3>Grand Total:</h3>
+<p>@Model.GrandTotal.ToString("C")</p> <!-- Formatted as currency -->

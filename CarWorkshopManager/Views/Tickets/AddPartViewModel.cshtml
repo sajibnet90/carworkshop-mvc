@@ -1,0 +1,32 @@
+﻿@model CarWorkshopManager.Models.AddPartViewModel
+
+<h2>Add Part to Ticket @Model.TicketId</h2>
+
+<form asp-action="AddPart" method="post">
+    <input type="hidden" asp-for="TicketId" />
+    <!-- Form fields here -->
+    <button type="submit" class="btn btn-primary">Add Part</button>
+</form>
+
+<h3>Parts for Ticket @Model.TicketId</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Unit Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model.Parts)
+        {
+            <tr>
+                <td>@part.Name</td>
+                <td>@part.Description</td>
+                <td>@part.Amount</td>
+                <td>@part.UnitPrice.ToString("C2")</td>
+            </tr>
+        }
+    </tbody>
+</table>

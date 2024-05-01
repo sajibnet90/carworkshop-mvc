@@ -1,15 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using CarWorkshopManager.Data; // Ensure this uses the correct namespace where ApplicationDbContext is located
-using Microsoft.Extensions.DependencyInjection;
+using CarWorkshopManager.Data;
+using CarWorkshopManager.Models; // Ensure this uses the correct namespace where ApplicationDbContext is located
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure Entity Framework Core with SQLite
+// Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
@@ -37,6 +38,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=UserAuth}/{action=Index}/{id?}");
 
 app.Run();

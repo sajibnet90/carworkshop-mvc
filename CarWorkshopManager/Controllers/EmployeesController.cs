@@ -32,15 +32,14 @@ namespace CarWorkshopManager.Controllers
         // POST: Employees/Create
         // Method to create a new employee.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,HourlyRate")] Employee employee)
+        public async Task<IActionResult> Create(Employee employee)
         {
-            if (ModelState.IsValid)
-            {
+          
+            
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            
             return View(employee);
         }
 

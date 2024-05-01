@@ -13,6 +13,8 @@ namespace CarWorkshopManager.Data
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Part> Parts { get; set; }
 
+        public DbSet<UserAuth> userAuths { get; set; }
+
         // Add other DbSets here
     }
 }

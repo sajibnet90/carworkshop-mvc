@@ -6,7 +6,22 @@ namespace CarWorkshopManager.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (TempData.ContainsKey("Status"))
+            {
+                if (TempData["Status"].ToString() == "1")
+                {
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "UserAuth");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "UserAuth");
+            }
+
         }
     }
 }

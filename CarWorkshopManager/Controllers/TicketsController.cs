@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using CarWorkshopManager.Models;
 using CarWorkshopManager.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace CarWorkshopManager.Controllers
@@ -21,17 +22,20 @@ namespace CarWorkshopManager.Controllers
             var tickets = _context.Tickets.Include(t => t.Parts);
             return View(await tickets.ToListAsync());
         }
-
+        //--------------------------------------------------------------------
         // GET: Tickets/Create
         public IActionResult Create()
         {
+            // Retrieve the list of employees from the database
+            var employees = _context.Employees.ToList();
+            // Pass the list of employees to the view
+            ViewBag.Employees = new SelectList(employees, "Id", "Name");
             return View();
         }
-
         // POST: Tickets/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,Model,RegistrationId,Description")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,Brand,Model,RegistrationId,Description,EmployeeId,RepairSchedule")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -39,6 +43,13 @@ namespace CarWorkshopManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            // If model state is not valid, retrieve the lists of employees and repair schedules from the database again
+            var employees = _context.Employees.ToList();
+
+            // Pass the list of employees to the view
+            ViewBag.Employees = new SelectList(employees, "Id", "Name");
+
             return View(ticket);
         }
 

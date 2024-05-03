@@ -17,7 +17,7 @@ namespace CarWorkshopManager.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -118,6 +118,9 @@ namespace CarWorkshopManager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Hours")
                         .HasColumnType("int");
 
@@ -128,6 +131,9 @@ namespace CarWorkshopManager.Migrations
                     b.Property<string>("RegistrationId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RepairSchedule")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

@@ -10,6 +10,8 @@
             <th>Model</th>
             <th>Registration ID</th>
             <th>Description</th>
+            <th>Employee</th>
+            <th>Repair Sheduled</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -22,6 +24,10 @@
                 <td>@ticket.Model</td>
                 <td>@ticket.RegistrationId</td>
                 <td>@ticket.Description</td>
+                <td>@ticket.EmployeeId</td>
+                <td>@ticket.RepairSchedule</td>
+
+
                 <td>
                     <a asp-action="Edit" asp-route-id="@ticket.Id" class="btn btn-primary">Edit</a>
                     <a asp-action="Delete" asp-route-id="@ticket.Id" class="btn btn-danger">Delete</a>

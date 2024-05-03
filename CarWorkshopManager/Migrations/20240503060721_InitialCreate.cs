@@ -35,11 +35,27 @@ namespace CarWorkshopManager.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegistrationId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Hours = table.Column<int>(type: "int", nullable: false)
+                    Hours = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
+                    RepairSchedule = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tickets", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "userAuths",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_userAuths", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -106,6 +122,9 @@ namespace CarWorkshopManager.Migrations
 
             migrationBuilder.DropTable(
                 name: "Parts");
+
+            migrationBuilder.DropTable(
+                name: "userAuths");
 
             migrationBuilder.DropTable(
                 name: "Employees");

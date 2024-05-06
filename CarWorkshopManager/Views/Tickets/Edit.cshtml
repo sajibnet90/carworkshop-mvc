@@ -25,6 +25,21 @@
         <textarea asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
+
+    <div class="form-group">
+        <label asp-for="EmployeeId" class="control-label">Assigned Employee</label>
+        <select asp-for="EmployeeId" class="form-control" asp-items="@ViewBag.Employees">
+            <option value="">Select Employee</option>
+        </select>
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RepairSchedule" class="control-label">Repair Schedule</label>
+        <input asp-for="RepairSchedule" type="datetime-local" class="form-control" />
+        <span asp-validation-for="RepairSchedule" class="text-danger"></span>
+    </div>
+
     <button type="submit" class="btn btn-success">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

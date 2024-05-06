@@ -42,7 +42,7 @@
 
     <div class="form-group">
         <label asp-for="RepairSchedule" class="control-label">Repair Schedule</label>
-        <input asp-for="RepairSchedule" type="datetime-local" class="form-control" />
+        <input asp-for="RepairSchedule" type="datetime-local" class="form-control" step="60" />
         <span asp-validation-for="RepairSchedule" class="text-danger"></span>
     </div>
 

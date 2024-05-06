@@ -15,14 +15,16 @@ namespace CarWorkshopManager.Controllers
         {
             _context = context;
         }
-
+        //--------------------------------Index action method------------------------------------
         // GET: Tickets
         public async Task<IActionResult> Index()
         {
             var tickets = _context.Tickets.Include(t => t.Parts);
             return View(await tickets.ToListAsync());
         }
-        //--------------------------------------------------------------------
+        
+
+        //---------------------Create Tickets---------------------------------
         // GET: Tickets/Create
         public IActionResult Create()
         {
@@ -32,6 +34,8 @@ namespace CarWorkshopManager.Controllers
             ViewBag.Employees = new SelectList(employees, "Id", "Name");
             return View();
         }
+
+
         // POST: Tickets/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -46,7 +50,6 @@ namespace CarWorkshopManager.Controllers
 
             // If model state is not valid, retrieve the lists of employees and repair schedules from the database again
             var employees = _context.Employees.ToList();
-
             // Pass the list of employees to the view
             ViewBag.Employees = new SelectList(employees, "Id", "Name");
 
@@ -54,7 +57,9 @@ namespace CarWorkshopManager.Controllers
         }
 
 
-        //-------------------------------------------------
+        //-----------------------------------------------------------------------------
+
+        //---------------------------Parts----------------------------------------------------
         // GET: Tickets/AddPart/5
         public async Task<IActionResult> AddPart(int? ticketId)
         {
@@ -63,58 +68,39 @@ namespace CarWorkshopManager.Controllers
                 return NotFound();
             }
 
-            var ticket = await _context.Tickets.Include(t => t.Parts).FirstOrDefaultAsync(t => t.Id == ticketId);
+            var ticket = await _context.Tickets.FindAsync(ticketId);
             if (ticket == null)
             {
                 return NotFound();
             }
 
-            var viewModel = new AddPartViewModel
-            {
-                TicketId = ticketId.Value,
-                Parts = ticket.Parts.ToList(),
-                Part = new Part { TicketId = ticketId.Value }
-            };
+            var part = new Part { TicketId = ticketId.Value };  
 
-            return View(viewModel);
+            return View(part);
         }
 
-        // POST: Tickets/AddPart
+
+        //---------------
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPart([Bind("Name,Description,Amount,UnitPrice,TicketId")] Part part)
+        public async Task<IActionResult> AddPart([Bind("PartId, Name, Description, Amount, UnitPrice, TicketId")] Part part)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Parts.Add(part);
-                await _context.SaveChangesAsync();
-
-                // Fetch the updated list of parts for the ticket
-                var parts = await _context.Parts
-                                          .Where(p => p.TicketId == part.TicketId)
-                                          .ToListAsync();
-
-                // Prepare the ViewModel to pass to the view
-                var viewModel = new AddPartViewModel
-                {
-                    TicketId = part.TicketId,
-                    Parts = parts,
-                    Part = new Part { TicketId = part.TicketId }  // Reset the part input form
-                };
-
-                return View(viewModel);
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                TempData["ErrorMessage"] = string.Join(", ", errors.Select(e => e.ErrorMessage));
+                return View(part);
             }
 
-            // If model state is not valid, just return the view with the current part data
-            return View(new AddPartViewModel
-            {
-                TicketId = part.TicketId,
-                //Parts = new List<Part>(), // Ensure Parts is initialized
-                Part = part
-            });
+            _context.Parts.Add(part);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Part added successfully.";
+            return RedirectToAction("Details", "Tickets", new { id = part.TicketId });
         }
 
-        //-------------------------------------------------------
+
+        //------------------------------Adding Hours-----------------------------------------
         // GET: Tickets/AddHours/5
         public IActionResult AddHours(int? id)
         {
@@ -128,7 +114,6 @@ namespace CarWorkshopManager.Controllers
             {
                 return NotFound();
             }
-
             // Pass the ticket to the view for displaying
             return View(ticket);
         }
@@ -136,7 +121,7 @@ namespace CarWorkshopManager.Controllers
         // POST: Tickets/AddHours
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddHours(int id, int hoursToAdd)
+        public async Task<IActionResult> AddHours(int id, int hoursWorked)
         {
             var ticket = await _context.Tickets.FindAsync(id);
             if (ticket == null)
@@ -146,14 +131,17 @@ namespace CarWorkshopManager.Controllers
 
             if (ModelState.IsValid)
             {
-                ticket.Hours += hoursToAdd;
+                ticket.Hours += hoursWorked; 
+                _context.Update(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
+            // If the model state is not valid, or you want to handle the form differently
             return View(ticket);
         }
 
+        //----------------------------------------------View Cost------------------------------
         // GET: Tickets/ViewCost/5
         public async Task<IActionResult> ViewCost(int? id)
         {
@@ -175,7 +163,7 @@ namespace CarWorkshopManager.Controllers
             var partsTotal = ticket.Parts.Sum(p => p.Amount * p.UnitPrice);
 
             // Calculate the total labor cost
-            var laborTotal = ticket.Hours * 10; // Assuming 10 is your hourly rate
+            var laborTotal = ticket.Hours * 10; // Assuming 10 euro hourly rate
 
             // Calculate the grand total
             var grandTotal = partsTotal + laborTotal;
@@ -192,7 +180,7 @@ namespace CarWorkshopManager.Controllers
             return View(viewModel);
         }
 
-        //------------------------------------------
+        //----------------------------Delete Ticket---------------------------------------
         // GET: Tickets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -237,7 +225,7 @@ namespace CarWorkshopManager.Controllers
         }
 
 
-        //-----------------------
+        //------------------------------Edit ticket----------------------------------------
         // GET: Tickets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -251,13 +239,17 @@ namespace CarWorkshopManager.Controllers
             {
                 return NotFound();
             }
+            // Retrieve the list of employees from the database
+            var employees = _context.Employees.ToList();
+            ViewBag.Employees = new SelectList(employees, "Id", "Name", ticket.EmployeeId);  // Set the current employee as the default
+
             return View(ticket);
         }
 
         // POST: Tickets/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model,RegistrationId,Description")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model,RegistrationId,Description,EmployeeId,RepairSchedule")] Ticket ticket)
         {
             if (id != ticket.Id)
             {
@@ -284,14 +276,17 @@ namespace CarWorkshopManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            // Reload employees in case of an error
+            var employees = _context.Employees.ToList();
+            ViewBag.Employees = new SelectList(employees, "Id", "Name", ticket.EmployeeId);
             return View(ticket);
         }
+
 
         private bool TicketExists(int id)
         {
             return _context.Tickets.Any(e => e.Id == id);
         }
-
 
 
     }

@@ -1,6 +1,8 @@
-﻿@model IEnumerable<CarWorkshopManager.Models.Ticket>
+﻿@* Index.cshtml *@
+@model IEnumerable<CarWorkshopManager.Models.Ticket>
 
-<h2>Tickets</h2>
+
+<h2>Tickets List</h2>
 
 <table class="table">
     <thead>
@@ -10,8 +12,8 @@
             <th>Model</th>
             <th>Registration ID</th>
             <th>Description</th>
-            <th>Employee</th>
-            <th>Repair Sheduled</th>
+            <th>Employee ID</th>
+            <th>Booking Date/Time</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,7 +27,7 @@
                 <td>@ticket.RegistrationId</td>
                 <td>@ticket.Description</td>
                 <td>@ticket.EmployeeId</td>
-                <td>@ticket.RepairSchedule</td>
+                <td>@ticket.RepairSchedule.ToString("g")</td>
 
 
                 <td>

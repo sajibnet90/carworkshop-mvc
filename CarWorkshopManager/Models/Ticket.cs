@@ -16,8 +16,14 @@ namespace CarWorkshopManager.Models
         public string Description { get; set; }
         public int Hours { get; set; } // Total hours of labor on the ticket
 
-        public int EmployeeId { get; set; } // ID of the assigned employee
+        //public int EmployeeId { get; set; } // ID of the assigned employee
+        [ForeignKey("Employee")]
+        public int EmployeeId { get; set; } // Foreign key for the Employee
+
+
+        //public virtual Employee Employee { get; set; }  // Navigation property for Employee
         public DateTime RepairSchedule { get; set; } // Date and time of repair schedule
+
         // Collection of Parts associated with the Ticket
         public virtual ICollection<Part> Parts { get; set; } = new List<Part>();
 

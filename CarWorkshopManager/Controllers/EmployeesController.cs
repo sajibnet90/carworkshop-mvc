@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using CarWorkshopManager.Models;
 using CarWorkshopManager.Data;
 
+//filename: EmployeesController.cs
 namespace CarWorkshopManager.Controllers
 {
     public class EmployeesController : Controller
@@ -22,6 +23,7 @@ namespace CarWorkshopManager.Controllers
             return View(await _context.Employees.ToListAsync());
         }
 
+        //-------------------------------------Create Employee-----------------
         // GET: Employees/Create
         // Method to display the Create Employee form.
         public IActionResult Create()
@@ -34,7 +36,6 @@ namespace CarWorkshopManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Employee employee)
         {
-          
             
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
@@ -43,6 +44,7 @@ namespace CarWorkshopManager.Controllers
             return View(employee);
         }
 
+        //-----------------------------------Edit employee------------------------------
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -75,8 +77,9 @@ namespace CarWorkshopManager.Controllers
                 {
                     _context.Update(employee);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException ex)
+                catch (DbUpdateConcurrencyException)
                 {
                     if (!EmployeeExists(employee.Id))
                     {
@@ -87,13 +90,12 @@ namespace CarWorkshopManager.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(employee);
         }
 
 
-        //_------------------------------------------------------------------------
+        //_------------------------------Delete Employee------------------------------------------
         // GET: Employees/Delete/5
         // Method to confirm the deletion of a specific employee.
         public async Task<IActionResult> Delete(int id)

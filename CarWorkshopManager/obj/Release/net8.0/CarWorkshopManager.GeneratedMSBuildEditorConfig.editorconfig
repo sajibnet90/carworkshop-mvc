@@ -9,91 +9,87 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CarWorkshopManager
 build_property.RootNamespace = CarWorkshopManager
-build_property.ProjectDir = C:\Users\ahsan-thinkpad\OneDrive\Desktop\Exchange_Warshaw\Graphical User Interface\carworkshop-mvc\CarWorkshopManager\
+build_property.ProjectDir = C:\Users\ahsan-thinkpad\OneDrive\Desktop\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\CarWorkshopManager\CarWorkshopManager\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ahsan-thinkpad\OneDrive\Desktop\Exchange_Warshaw\Graphical User Interface\carworkshop-mvc\CarWorkshopManager
+build_property.MSBuildProjectDirectory = C:\Users\ahsan-thinkpad\OneDrive\Desktop\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\CarWorkshopManager\CarWorkshopManager
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Employees/Create.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Employees/Delete.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Employees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Employees/Edit.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Employees/Index.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Home/Index.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Home/Privacy.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Shared/Error.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/AddHours.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/AddHours.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xBZGRIb3Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/AddPart.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/AddPart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xBZGRQYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/AddPartViewModel.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xBZGRQYXJ0Vmlld01vZGVsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/Create.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/Delete.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/Edit.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/Index.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Tickets/ViewCost.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Tickets/ViewCost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xWaWV3Q29zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/UserAuth/Index.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/UserAuth/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/_ViewImports.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/_ViewStart.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahsan-thinkpad/OneDrive/Desktop/Exchange_Warshaw/Graphical User Interface/carworkshop-mvc/CarWorkshopManager/Views/Shared/_Layout.cshtml]
+[C:/Users/ahsan-thinkpad/OneDrive/Desktop/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/24L-EGUI-TASK-2-3-Nazmul-Mohammad-main/CarWorkshopManager/CarWorkshopManager/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1sc3oye7q2

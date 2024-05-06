@@ -17,7 +17,7 @@
         @foreach (var part in Model.Ticket.Parts)
         {
             <tr>
-                <td>@part.Id</td> <!-- Display Part ID -->
+                <td>@part.PartId</td> <!-- Display Part ID -->
                 <td>@part.Name</td>
                 <td>@part.Amount</td>
                 <td>@part.UnitPrice.ToString("C")</td> <!-- Formatted as currency -->
@@ -33,3 +33,6 @@
 
 <h3>Grand Total:</h3>
 <p>@Model.GrandTotal.ToString("C")</p> <!-- Formatted as currency -->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

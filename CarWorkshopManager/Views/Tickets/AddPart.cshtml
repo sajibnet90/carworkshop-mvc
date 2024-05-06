@@ -1,63 +1,57 @@
-﻿@model CarWorkshopManager.Models.AddPartViewModel
-
+﻿@* AddPart.cshtml *@
+@model CarWorkshopManager.Models.Part
 
 <h2>Add Part to Ticket @Model.TicketId</h2>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
 <form asp-action="AddPart" method="post">
-    <input type="hidden" asp-for="Part.TicketId" />
+    <input type="hidden" asp-for="TicketId" />
     <div class="form-group">
-        <label asp-for="Part.Name" class="control-label"></label>
-        <input asp-for="Part.Name" class="form-control" />
-        <span asp-validation-for="Part.Name" class="text-danger"></span>
+        <label asp-for="PartId" class="control-label">Part ID</label>
+        <input asp-for="PartId" class="form-control" required />
+        <span asp-validation-for="PartId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Part.Description" class="control-label"></label>
-        <input asp-for="Part.Description" class="form-control" />
-        <span asp-validation-for="Part.Description" class="text-danger"></span>
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Part.Amount" class="control-label"></label>
-        <input asp-for="Part.Amount" type="number" class="form-control" />
-        <span asp-validation-for="Part.Amount" class="text-danger"></span>
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Part.UnitPrice" class="control-label"></label>
-        <input asp-for="Part.UnitPrice" type="number" step="0.01" class="form-control" />
-        <span asp-validation-for="Part.UnitPrice" class="text-danger"></span>
+        <label asp-for="Amount" class="control-label"></label>
+        <input asp-for="Amount" type="number" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Add Part</button>
+    <div class="form-group">
+        <label asp-for="UnitPrice" class="control-label"></label>
+        <input asp-for="UnitPrice" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="UnitPrice" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add This Part</button>
 </form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
-
-
-<h3>Existing Parts</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Unit Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.Parts != null)
-        {
-            foreach (var part in Model.Parts)
-            {
-                <tr>
-                    <td>@part.Name</td>
-                    <td>@part.Description</td>
-                    <td>@part.Amount</td>
-                    <td>@part.UnitPrice</td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4">No parts available</td>
-            </tr>
-        }
-    </tbody>
-</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

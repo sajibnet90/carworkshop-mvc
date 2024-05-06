@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorkshopManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240503060721_InitialCreate")]
+    [Migration("20240506172527_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -75,11 +75,11 @@ namespace CarWorkshopManager.Migrations
 
             modelBuilder.Entity("CarWorkshopManager.Models.Part", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PartId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PartId"));
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
@@ -98,7 +98,7 @@ namespace CarWorkshopManager.Migrations
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PartId");
 
                     b.HasIndex("TicketId");
 

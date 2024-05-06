@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CarWorkshopManager.Models
-{ 
-// Employee.cs
+{
+  //filename: Employee.cs
 public class Employee
 {
     public int Id { get; set; }
@@ -10,6 +10,6 @@ public class Employee
     // Other properties
 
     // Navigation property for calendar events
-    public ICollection<CalendarEvent> CalendarEvents { get; set; }
+    //public ICollection<CalendarEvent> CalendarEvents { get; set; }
 }
 }

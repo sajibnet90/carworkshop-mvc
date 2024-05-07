@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj": {}
+    "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\Exchange_Warshaw\\Graphical User Interface\\24L-EGUI-TASK-2-3-Nazmul-Mohammad\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj": {
+    "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\Exchange_Warshaw\\Graphical User Interface\\24L-EGUI-TASK-2-3-Nazmul-Mohammad\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj",
+        "projectUniqueName": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\Exchange_Warshaw\\Graphical User Interface\\24L-EGUI-TASK-2-3-Nazmul-Mohammad\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj",
         "projectName": "CarWorkshopManager",
-        "projectPath": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj",
+        "projectPath": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\Exchange_Warshaw\\Graphical User Interface\\24L-EGUI-TASK-2-3-Nazmul-Mohammad\\CarWorkshopManager\\CarWorkshopManager\\CarWorkshopManager.csproj",
         "packagesPath": "C:\\Users\\ahsan-thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\24L-EGUI-TASK-2-3-Nazmul-Mohammad-main\\CarWorkshopManager\\CarWorkshopManager\\obj\\",
+        "outputPath": "C:\\Users\\ahsan-thinkpad\\OneDrive\\Desktop\\Exchange_Warshaw\\Graphical User Interface\\24L-EGUI-TASK-2-3-Nazmul-Mohammad\\CarWorkshopManager\\CarWorkshopManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -45,13 +45,15 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-<h3>Existing Parts</h3>
+
+<h3>Existing Added Parts</h3>
 <ul>
     @foreach (var part in ViewBag.Parts as IEnumerable<CarWorkshopManager.Models.Part>)
     {
         <li>@part.Name - @part.Description, Quantity: @part.Amount, Price: @part.UnitPrice</li>
     }
 </ul>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

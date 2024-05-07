@@ -1,8 +1,8 @@
-﻿@model CarWorkshopManager.Models.Ticket
+﻿@model CarWorkshopManager.Models.TicketViewModel
 
 <h2>Edit Ticket</h2>
 
-<form asp-action="Edit">
+<form asp-action="Edit" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="Id" />
     <div class="form-group">

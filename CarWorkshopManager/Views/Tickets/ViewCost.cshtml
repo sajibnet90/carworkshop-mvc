@@ -31,7 +31,8 @@
 <p>@Model.Ticket.Parts.Sum(p => p.Amount * p.UnitPrice).ToString("C")</p>
 
 <h3>Labor:</h3>
-<p>@Model.Ticket.Hours hours x €10 per hour</p>
+<p>@Model.Ticket.Hours hours x @Model.Ticket.Employee.HourlyRate.ToString("C") per hour</p>
+@*<p>@Model.Ticket.Hours hours x €10 per hour</p>*@
 <p>Total Labor Cost: @Model.LaborTotal.ToString("C")</p> <!-- Formatted as currency -->
 
 <h3>Grand Total:</h3>

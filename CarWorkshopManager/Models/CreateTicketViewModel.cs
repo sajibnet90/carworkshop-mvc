@@ -21,5 +21,11 @@ namespace CarWorkshopManager.Models
 
         [Required]
         public DateTime RepairSchedule { get; set; }
+
+        public CreateTicketViewModel()
+        {
+            // Initialize the RepairSchedule to now or to a reasonable default
+            RepairSchedule = DateTime.Now;
+        }
     }
 }

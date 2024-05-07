@@ -29,12 +29,12 @@ namespace CarWorkshopManager.Controllers
         // GET: Tickets/Create
         public IActionResult Create()
         {
+            // Initialize a new ViewModel
+            var viewModel = new CreateTicketViewModel();
+ 
             // Retrieve the list of employees from the database
             var employees = _context.Employees.ToList();
             ViewBag.Employees = new SelectList(employees, "Id", "Name");
-
-            // Initialize a new ViewModel
-            var viewModel = new CreateTicketViewModel();
             return View(viewModel);
         }
 

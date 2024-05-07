@@ -14,11 +14,10 @@ namespace CarWorkshopManager.Models
         public string Model { get; set; }
         public string RegistrationId { get; set; }
         public string Description { get; set; }
-        public int Hours { get; set; } // Total hours of labor on the ticket
+        public int Hours { get; set; }
 
-        //public int EmployeeId { get; set; } // ID of the assigned employee
         [ForeignKey("Employee")]
-        public int EmployeeId { get; set; } // Foreign key for the Employee
+        public int EmployeeId { get; set; } // Foreign key for the Employee and ID of the assigned employee
 
 
         //public virtual Employee Employee { get; set; }  // Navigation property for Employee

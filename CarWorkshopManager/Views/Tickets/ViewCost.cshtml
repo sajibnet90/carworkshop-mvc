@@ -2,7 +2,7 @@
 
 <h2>Cost Summary for Ticket @Model.Ticket.Id</h2>
 
-<h3>Parts:</h3>
+<h3>Parts Needed:</h3>
 <table class="table">
     <thead>
         <tr>
@@ -21,11 +21,14 @@
                 <td>@part.Name</td>
                 <td>@part.Amount</td>
                 <td>@part.UnitPrice.ToString("C")</td> <!-- Formatted as currency -->
-                <td>@(part.Amount * part.UnitPrice).ToString("C")</td> <!-- Calculated total, formatted as currency -->
+                <td>@((part.Amount * part.UnitPrice).ToString("C"))</td> <!-- Calculated total, formatted as currency -->
             </tr>
         }
     </tbody>
 </table>
+
+<h3>Total Parts Cost:</h3>
+<p>@Model.Ticket.Parts.Sum(p => p.Amount * p.UnitPrice).ToString("C")</p>
 
 <h3>Labor:</h3>
 <p>@Model.Ticket.Hours hours x €10 per hour</p>

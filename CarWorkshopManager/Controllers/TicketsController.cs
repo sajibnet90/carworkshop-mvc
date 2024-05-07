@@ -59,7 +59,8 @@ namespace CarWorkshopManager.Controllers
 
         //-----------------------------------------------------------------------------
 
-        //---------------------------Parts----------------------------------------------------
+        //---------------------------Adding Parts----------------------------------------------------
+        // GET: Tickets/AddPart/5
         // GET: Tickets/AddPart/5
         public async Task<IActionResult> AddPart(int? ticketId)
         {
@@ -68,35 +69,36 @@ namespace CarWorkshopManager.Controllers
                 return NotFound();
             }
 
-            var ticket = await _context.Tickets.FindAsync(ticketId);
+            var ticket = await _context.Tickets
+                                       .Include(t => t.Parts) // Include the Parts related to this Ticket
+                                       .FirstOrDefaultAsync(t => t.Id == ticketId);
             if (ticket == null)
             {
                 return NotFound();
             }
 
-            var part = new Part { TicketId = ticketId.Value };  
-
+            ViewBag.Parts = ticket.Parts;  // Pass the list of parts to the view
+            var part = new Part { TicketId = ticketId.Value };
             return View(part);
         }
+
 
 
         //---------------
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPart([Bind("PartId, Name, Description, Amount, UnitPrice, TicketId")] Part part)
+        public async Task<IActionResult> AddPart([Bind("Name, Description, Amount, UnitPrice, TicketId")] Part part)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                TempData["ErrorMessage"] = string.Join(", ", errors.Select(e => e.ErrorMessage));
-                return View(part);
+                _context.Parts.Add(part);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Part added successfully.";
+                //return RedirectToAction("Details", "Tickets", new { id = part.TicketId });
+                return RedirectToAction("AddPart", new { ticketId = part.TicketId });
+
             }
-
-            _context.Parts.Add(part);
-            await _context.SaveChangesAsync();
-
-            TempData["SuccessMessage"] = "Part added successfully.";
-            return RedirectToAction("Details", "Tickets", new { id = part.TicketId });
+            return View(part);
         }
 
 
